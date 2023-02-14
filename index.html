@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+
+    <title>Hello World!</title>
+    <style>
+      html {
+        background: transparent;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background: transparent;
+      }
+      #container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        border-radius: 100%;
+        /* background: white; */
+        overflow: hidden;
+        justify-content: center;
+      }
+      #videoElement {
+        opacity: 0.8;
+        background: transparent;
+        height: 100%;
+      }
+      * {
+        cursor: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <video autoplay="true" id="videoElement"></video>
+    </div>
+    <!-- Neutralino.js client. This file is gitignored, 
+          because `neu update` typically downloads it.
+          Avoid copy-pasting it. 
+          -->
+    <script>
+      var video = document.querySelector("#videoElement");
+
+      if (navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices
+          .getUserMedia({ video: true })
+          .then(function (stream) {
+            video.srcObject = stream;
+          })
+          .catch(function (err0r) {
+            console.log("Something went wrong!");
+          });
+      }
+    </script>
+    <script src="./script.js"></script>
+  </body>
+</html>
