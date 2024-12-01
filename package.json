@@ -1,6 +1,6 @@
 {
   "name": "overlay",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -21,6 +21,7 @@
   "build": {
     "appId": "com.example.CameraOverlay",
     "productName": "Camera Overlay",
+    "publish": "never",
     "directories": {
       "output": "dist"
     },
