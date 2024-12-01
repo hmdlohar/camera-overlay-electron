@@ -21,7 +21,7 @@
   "build": {
     "appId": "com.example.CameraOverlay",
     "productName": "Camera Overlay",
-    "publish": "never",
+    "publish": null,
     "directories": {
       "output": "dist"
     },
