@@ -5,13 +5,33 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder --linux appimage"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "electron": "^22.0.3",
     "electron-window-position": "^1.0.1"
+  },
+  "devDependencies": {
+    "electron": "^22.0.3",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.example.CameraOverlay",
+    "productName": "Camera Overlay",
+    "directories": {
+      "output": "dist"
+    },
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "linux": {
+      "target": [
+        "appImage"
+      ],
+      "icon": "assets/icon.png"
+    }
   }
 }
